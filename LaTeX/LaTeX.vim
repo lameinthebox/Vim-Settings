@@ -6,8 +6,8 @@ source ./fonts.vim
 source ./init.vim
 source ./symbols.vim
 
-au FileType tex nmap <silent> <F3>			:! pdflatex %<CR>
-au FileType tex nmap <silent> <F4>			:call OpenLaTeX()<CR>
+au FileType tex nmap <silent> <F3>		:! pdflatex %<CR>
+au FileType tex nmap <silent> <F4>		:call OpenLaTeX()<CR>
 
 au FileType tex imap \tb<CR>			<ESC>:call Tabify()<CR>i
 
