@@ -19,7 +19,6 @@ au FileType tex imap \sec<CR>		\section{<CR><CR>
 au FileType tex imap \sub<CR>		\subsection{<CR><CR>
 au FileType tex imap \para<CR>		\paragraph{<CR><Space>
 
-au FileType tex imap \circuit<CR>	<ESC>:call SetScope('tikzpicture')<CR>:call SetOption('scale=2')<CR>A<CR><ESC>:call Set('\draw')<CR>:call SetOption('color=black', 'thick')<CR>A<CR>;<Up><ESC>o
 au FileType tex imap \tabbing<CR>	<ESC>:call SetScope('tabbing')<CR>:call Set('left \=left \=left \=left \=left \kill')<CR>:call Tabify()<CR>o
 
 au FileType tex imap \tabular<CR>	\begin{tabular}{c<Bar>c<Right><CR>\end{tabular}<Up><End><CR>\hline\hline<CR>\hline\hline<Up><End><CR>

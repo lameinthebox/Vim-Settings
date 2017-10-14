@@ -1,6 +1,7 @@
 source ./tmp.vim
 
 source ./arrows.vim
+source ./circuit.vim
 source ./enumerate.vim
 source ./fonts.vim
 source ./init.vim
