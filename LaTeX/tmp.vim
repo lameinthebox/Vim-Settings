@@ -1,15 +1,12 @@
 source ./basic.vim
 
 
-au FileType tex imap \pack<CR>	\usepackage<ESC>:call Set(Brace('{', '}', Get('Package')))<CR>A<CR>
-
 " ##########################################################################################################
 au FileType tex imap \array<CR>	\left(\begin{array}{ccc}\end{array}\right)<ESC>bbbbb<Left>i<CR><UP><End><CR>
 au FileType tex imap \case<CR>	\left\{\begin{array}{ll}\end{array}\right.<ESC>bbbbb<Left>i<CR><UP><End><CR>
 
 " Scope
 " ##########################################################################################################
-au FileType tex imap \scope<CR>	<ESC>:call SetScope()<CR>A
 
 au FileType tex imap \docu<CR>		<ESC>:call SetScope('document')<CR>i
 au FileType tex imap \eqn<CR>		<ESC>:call SetScope('eqnarray*')<CR>i
