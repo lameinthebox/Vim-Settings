@@ -1,5 +1,5 @@
 " Symbols
-source ./basic.vim
+source ~/vimset/LaTeX/basic.vim
 
 function! Arith(input)
 	let type = a:input.''

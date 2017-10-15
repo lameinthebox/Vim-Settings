@@ -1,5 +1,5 @@
 " Initial
-source ./basic.vim
+source ~/vimset/LaTeX/basic.vim
 
 
 
