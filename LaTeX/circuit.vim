@@ -1,5 +1,5 @@
 " Circuit
-source ~/vimset/LaTeX/basic.vim
+source ~/Vim-Settings/LaTeX/basic.vim
 
 au FileType tex imap \circuit<CR>	<ESC>:call SetScope('tikzpicture')<CR>:call SetOption('scale=2')<CR>A<CR><ESC>:call Set('\draw')<CR>:call SetOption('color=black', 'thick')<CR>A<CR>;<Up><ESC>o
 

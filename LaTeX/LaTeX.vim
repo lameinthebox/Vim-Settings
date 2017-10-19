@@ -1,12 +1,12 @@
-source ~/vimset/LaTeX/tmp.vim
-source ~/vimset/LaTeX/basic.vim
+source ~/Vim-Settings/LaTeX/tmp.vim
+source ~/Vim-Settings/LaTeX/basic.vim
 
-source ~/vimset/LaTeX/arrows.vim
-source ~/vimset/LaTeX/circuit.vim
-source ~/vimset/LaTeX/enumerate.vim
-source ~/vimset/LaTeX/fonts.vim
-source ~/vimset/LaTeX/init.vim
-source ~/vimset/LaTeX/symbols.vim
+source ~/Vim-Settings/LaTeX/arrows.vim
+source ~/Vim-Settings/LaTeX/circuit.vim
+source ~/Vim-Settings/LaTeX/enumerate.vim
+source ~/Vim-Settings/LaTeX/fonts.vim
+source ~/Vim-Settings/LaTeX/init.vim
+source ~/Vim-Settings/LaTeX/symbols.vim
 
 au FileType tex nmap <silent> <F3>			:! pdflatex %<CR>
 au FileType tex nmap <silent> <F4>			:call OpenLaTeX()<CR>
