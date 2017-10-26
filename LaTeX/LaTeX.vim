@@ -60,6 +60,9 @@ function! SetOption(...)
 			let str = str.', '.token
 		endfor
 
+"	if (a:0)
+"		let str = Merge(a:000)
+
 		call Set(Brace('[', ']', str))
 		call Tabify()
 	end

@@ -42,3 +42,14 @@ function! Brace(open, close, ...)
 endfunction
 
 
+function! Merge(...)
+	if a:0
+		let str = a:1.''
+
+		for token in a:000[1:a:0]
+			let str = str.', '.token
+		endfor
+
+		return str
+	end
+endfunction
