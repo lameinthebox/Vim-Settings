@@ -1,4 +1,4 @@
-source ~/Vim-Settings/LaTeX/basic.vim
+"source ~/Vim-Settings/LaTeX/basic.vim
 
 
 " ##########################################################################################################

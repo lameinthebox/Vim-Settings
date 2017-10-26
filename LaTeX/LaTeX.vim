@@ -1,5 +1,4 @@
 source ~/Vim-Settings/LaTeX/tmp.vim
-source ~/Vim-Settings/LaTeX/basic.vim
 
 source ~/Vim-Settings/LaTeX/arrows.vim
 source ~/Vim-Settings/LaTeX/circuit.vim
@@ -7,6 +6,13 @@ source ~/Vim-Settings/LaTeX/enumerate.vim
 source ~/Vim-Settings/LaTeX/fonts.vim
 source ~/Vim-Settings/LaTeX/init.vim
 source ~/Vim-Settings/LaTeX/symbols.vim
+
+function! OpenLaTeX()
+	let name = split(expand('%'), ".tex")[0].".pdf"
+	let cmd = "! gnome-terminal -x sh -c 'okular ".name." && read continue && exit;exec bash'"
+	execute cmd
+endfunction
+
 
 au FileType tex nmap <silent> <F3>			:! pdflatex %<CR>
 au FileType tex nmap <silent> <F4>			:call OpenLaTeX()<CR>
@@ -29,3 +35,33 @@ au FileType tex imap \begin<CR>			\begin<ESC>:call Set(Brace('{', '}', Get('Scop
 au FileType tex imap \end<CR>			\end<ESC>:call Set(Brace('{', '}', Get('Scope')))<CR>A<CR>
 
 au FileType tex imap \en<CR>			<ESC>:call Enumerate()<CR>A
+
+
+function! SetScope(...)
+	if (a:0)
+		let scope = Brace('{', '}', a:1)
+	else
+		let scope = Brace('{', '}', Get('Scope'))
+	end
+
+	call Set('\end'.scope)
+	execute 'normal! O'
+	call Set('\begin'.scope)
+	execute 'normal! o'
+	call Tabify()
+endfunction
+
+
+function! SetOption(...)
+	if (a:0)
+		let str = a:1.''
+
+		for token in a:000[1:a:0]
+			let str = str.', '.token
+		endfor
+
+		call Set(Brace('[', ']', str))
+		call Tabify()
+	end
+endfunction
+

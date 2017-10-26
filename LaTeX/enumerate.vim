@@ -1,5 +1,5 @@
 " Enumerate
-source ~/Vim-Settings/LaTeX/basic.vim
+"source ~/Vim-Settings/LaTeX/basic.vim
 
 function! Enumerate(...)
 	if (a:0)
