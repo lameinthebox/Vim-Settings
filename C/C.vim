@@ -15,6 +15,8 @@ au FileType c,cpp imap \compile<CR>		<F3><CR>
 au FileType c,cpp imap \run<CR>			<F4><CR>
 au FileType c,cpp imap \runsh<CR>		<F5><CR>
 
+au FileType c,cpp imap \head<CR>		<ESC>:call Header()<CR>A
+
 au FileType c,cpp imap \dec<CR>			<ESC>:call FunctionDeclaration()<CR>o
 au FileType c,cpp imap \def<CR>			<ESC>:call FunctionDefinition()<CR>o
 au FileType c,cpp imap \main<CR>		<ESC>:call FunctionDefinition('int', 'main', 'void/*int argc, char* argv[]*/', 'EXIT_SUCCESS')<CR>o
@@ -101,3 +103,17 @@ function! IfStatement(...)
 	call Set('if('.cond.') {')
 	call Tabify()
 endfunction
+
+
+function! Header(...)
+	if (a:0)
+		let header	= a:1
+	else
+		let header	= Get('Header')
+	end
+
+	execute "normal! mzggo"
+	call Set('#include <'.header.'>')
+	execute "normal! `z"
+endfunction
+
