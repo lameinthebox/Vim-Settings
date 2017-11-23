@@ -18,7 +18,7 @@ au FileType tex imap \para<CR>		\paragraph{<CR><Space>
 
 au FileType tex imap \tabbing<CR>	<ESC>:call SetScope('tabbing')<CR>:call Set('left \=left \=left \=left \=left \kill')<CR>:call Tabify()<CR>o
 
-au FileType tex imap \tabular<CR>	\begin{tabular}{c<Bar>c<Right><CR>\end{tabular}<Up><End><CR>\hline\hline<CR>\hline\hline<Up><End><CR>
+au FileType tex imap \tabular<CR>	\begin{tabular}{c<Bar>c}<CR>\end{tabular}<Up><End><CR>\hline\hline<CR>\hline\hline<Up><End><CR>
 
 " Figures
 function! DrawStack()
@@ -53,4 +53,4 @@ au FileType tex imap \drawtree<CR>		\Tree[.]<Left>
 
 " Sep
 " ##########################################################################################################
-au FileType tex imap \colsep<CR>	{\setlength\arraycolsep{2pt}}<Left><CR><Up><End><CR>
+au FileType tex imap \colsep<CR>	{\setlength\arraycolsep{2pt}}\noindent<ESC>b<Left><Left>i<CR><Up><End><CR>
