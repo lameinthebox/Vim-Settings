@@ -17,7 +17,7 @@ endfunction
 au FileType tex nmap <silent> <F3>			:! pdflatex %<CR>
 au FileType tex nmap <silent> <F4>			:call OpenLaTeX()<CR>
 
-au FileType tex imap \pack<CR>			\usepackage<ESC>:call Set(Brace('{', '}', Get('Package')))<CR>A<CR>
+au FileType tex imap \pack<CR>			\usepackage<ESC>:call SetOption(Get('Options'))<CR>:call Set(Brace('{', '}', Get('Package')))<CR>A<CR>
 
 au FileType tex imap \tb<CR>			<ESC>:call Tabify()<CR>i
 

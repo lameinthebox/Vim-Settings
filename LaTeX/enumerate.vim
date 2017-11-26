@@ -21,4 +21,4 @@ au FileType tex imap \enum<CR>		<ESC>:call Enumerate('\arabic*)')<CR>A
 au FileType tex imap \ealp<CR>		<ESC>:call Enumerate('\alph*)')<CR>A
 au FileType tex imap \ebul<CR>		<ESC>:call Enumerate('$\bullet$')<CR>A
 au FileType tex imap \edag<CR>		<ESC>:call Enumerate('$\dagger$')<CR>A
-
+au FileType tex imap \edia<CR>		<ESC>:call Enumerate('$\diamond$')<CR>A
