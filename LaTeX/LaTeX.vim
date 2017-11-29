@@ -2,6 +2,7 @@ source ~/Vim-Settings/LaTeX/tmp.vim
 
 source ~/Vim-Settings/LaTeX/arrows.vim
 source ~/Vim-Settings/LaTeX/circuit.vim
+source ~/Vim-Settings/LaTeX/color.vim	
 source ~/Vim-Settings/LaTeX/enumerate.vim
 source ~/Vim-Settings/LaTeX/fonts.vim
 source ~/Vim-Settings/LaTeX/init.vim

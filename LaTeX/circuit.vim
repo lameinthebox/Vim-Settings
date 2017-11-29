@@ -13,3 +13,22 @@ au FileType tex imap \short<CR>			to<ESC>:call SetOption('short')<CR>A<Space>
 
 au FileType tex imap \circ<CR>			node<ESC>:call SetOption('circ', 'label='.Get('Position').':'.Brace('$', '$', Get('Label')))<CR>A{}<Space>
 au FileType tex imap \gr<CR>			node<ESC>:call SetOption('ground')<CR>A{}<Space>
+
+au FileType tex imap \to<CR>			<ESC>:call Branch()<CR>A
+
+function! Branch(...)
+	if a:0
+		let type	= a:1
+		let name	= a:2
+		let volt	= a:2
+		let curr	= a:3
+	else
+		let type	= Get('Branch')
+		let name	= Get('name')
+		let volt	= Get('Voltage')
+		let curr	= Get('Current')
+	end
+
+	call Set("to[".type.", label=$".name."$, v>=$".volt."$, i>=$".curr."$] ")
+
+endfunction

@@ -20,3 +20,6 @@ au FileType tex imap \mathcal<CR>		\mathcal{<CR>
 
 au FileType tex imap \em<CR>			\emph{<CR>
 au FileType tex imap \emph<CR>			\emph{<CR>
+
+au FileType tex imap "<CR>				\lq\lq <ESC>:call Set(Get())<CR>A\rq\rq\
+

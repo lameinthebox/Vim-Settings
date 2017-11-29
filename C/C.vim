@@ -23,10 +23,12 @@ au FileType c,cpp imap \main<CR>		<ESC>:call FunctionDefinition('int', 'main', '
 
 au FileType c,cpp imap \for<CR>			<ESC>:call ForLoop()<CR>o
 au FileType c,cpp imap \forin<CR>		<ESC>:call ForLoop('int i = 0', 'i < n', '++i')<CR>o
+au FileType c,cpp imap \foriN<CR>		<ESC>:call ForLoop('int i = 0', 'i < N', '++i')<CR>o
 au FileType c,cpp imap \forjn<CR>		<ESC>:call ForLoop('int j = 0', 'j < n', '++j')<CR>o
+au FileType c,cpp imap \forjN<CR>		<ESC>:call ForLoop('int j = 0', 'j < N', '++j')<CR>o
 
 au FileType c,cpp imap \if<CR>			<ESC>:call IfStatement()<CR>o
-au FileType c,cpp imap \ifd<CR>			<ESC>:call IfStatement(DEBUG)<CR>o
+au FileType c,cpp imap \ifd<CR>			<ESC>:call IfStatement('DEBUG')<CR>o
 
 
 function! FunctionDeclaration(...)
