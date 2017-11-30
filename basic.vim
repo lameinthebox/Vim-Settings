@@ -53,3 +53,17 @@ function! Merge(...)
 		return str
 	end
 endfunction
+
+
+function! Refactor(...)
+	if a:0
+		let old	= a:1
+		let new	= a:2
+	else 
+		let old = Get('From')
+		let new = Get('To')
+	end
+
+	let cmd	= '%s/\<'.old.'\>/'.new.'/gc'
+	execute cmd
+endfunction
