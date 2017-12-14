@@ -27,6 +27,19 @@ function! Set(token)
 	call setline('.', curline.token)
 endfunction
 
+function! SetLines(...)
+	if a:0
+		for token in a:000[0:(a:0-2)]
+			let token = token.', '
+			call Set(token)
+			execute "normal! o"
+		endfor
+		call Set(a:000[a:0-1])
+
+		call Tabify()
+	end
+endfunction
+
 
 function! Brace(open, close, ...)
 	let open	= a:open
