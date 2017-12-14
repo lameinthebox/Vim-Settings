@@ -7,6 +7,7 @@ source ~/Vim-Settings/LaTeX/enumerate.vim
 source ~/Vim-Settings/LaTeX/fonts.vim
 source ~/Vim-Settings/LaTeX/init.vim
 source ~/Vim-Settings/LaTeX/symbols.vim
+source ~/Vim-Settings/LaTeX/tcolorbox.vim
 
 function! OpenLaTeX()
 	let name = split(expand('%'), ".tex")[0].".pdf"
