@@ -18,6 +18,6 @@ source ~/Vim-Settings/latex/latex_environment.vim
 
 au FileType tex imap \env<CR>	<ESC>:call SetEnvironment()<CR>
 au FileType tex imap \docu<CR>	<ESC>:call SetEnvironment('document')<CR>
-au FileType tex imap \enum<CR>	<ESC>:call SetEnvironment('enumerate')<CR>
+au FileType tex imap \enum<CR>	<ESC>:call SetEnvironment_Enumerate()<CR>
 au FileType tex imap \eqn<CR>	<ESC>:call SetEnvironment('equation')<CR>
 
