@@ -21,3 +21,7 @@ au FileType tex imap \docu<CR>	<ESC>:call SetEnvironment('document')<CR>
 au FileType tex imap \enum<CR>	<ESC>:call SetEnvironment_Enumerate()<CR>
 au FileType tex imap \eqn<CR>	<ESC>:call SetEnvironment('equation')<CR>
 
+" Math
+source ~/Vim-Settings/latex/latex_math.vim
+
+au FileType tex imap \mat<CR>    <ESC>:call Matrix()<CR>

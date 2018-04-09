@@ -1,6 +1,6 @@
 
 function SetEnvironment(...)
-	if (a:0)
+	if a:0
 		let env	= a:1
 		let opt = ''
 		for token in a:000[1:a:0]
@@ -9,14 +9,21 @@ function SetEnvironment(...)
 	else
 		let env = Get('Environment')
 		let opt = Get('Options')
-	end
+	endif
 
-	call Set('\begin{'.env.'}')
-	execute "normal! o\<tab> "
-	call Set('['.opt.']')
-	execute "normal! xo\<bs> "
-	call Set('\end{'.env.'}')
-	execute "normal! x\<up>o \<bs>"
+    if opt != ''
+	    call Set('\begin{'.env.'}')
+	    execute "normal! o\<tab> "
+	    call Set('['.opt.']')
+	    execute "normal! xo\<bs> "
+	    call Set('\end{'.env.'}')
+	    execute "normal! x\<up>o \<bs>"
+    else
+        call Set('\begin{'.env.'}')
+        execute "normal! o "
+        call Set('\end{'.env.'}')
+        execute "normal! x\<up>o\<tab>"
+    endif
 	execute "startinsert!"
 endfunction
 
